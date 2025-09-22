@@ -1,0 +1,18 @@
+#This file codifies the specific filters used during the investigation, making them reusable for future analysis.
+
+# Wireshark Display Filters for Web Browsing Analysis
+
+# Isolate all DNS traffic (queries and responses)
+udp.port == 53
+
+# Isolate all standard HTTP web traffic
+tcp.port == 80
+
+# Show all traffic to or from a specific IP address
+ip.addr == 142.250.1.139
+
+# Filter for ICMP traffic (e.g., ping requests and replies)
+icmp
+
+# Show only TCP packets that are part of a session handshake (SYN packets)
+tcp.flags.syn == 1
